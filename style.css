@@ -8,12 +8,11 @@ html, body {
 }
 
 .page {
-    zoom: 75%;
     position: absolute; /* Added so all pages overlap */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 1200px;
+    width: 100vw;
+    height: 100vh;
     border: rgba(19, 19, 19, 0.10) 4px solid;
     border-radius: 7px;
     margin-bottom: 8px;
@@ -21,7 +20,11 @@ html, body {
     justify-content: center;
     align-items: center;
     flex-direction: column; /* Stack elements vertically */
-    padding: 42px;
+    padding-bottom: 60px;
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-top: 20px;
+    box-sizing: border-box;
     opacity: 0;
     transition: opacity 0.8s ease, transform 0.8s ease; /* Ensure smooth fading and sliding */
 }
@@ -35,25 +38,22 @@ html, body {
 .text, .description, .buttons-wrapper, .primary-button, .secondary-button, .button, .container, .content-wrapper, .content, .title {
     box-sizing: border-box;
     color: rgb(91, 97, 122);
-    font-size: 16px;
+    font-size: 1em;
     font-style: normal;
     font-weight: 300;
-    line-height: 20px;
     text-align: center;
 }
 
 .text {
     color: rgb(38, 46, 53);
-    font-size: 48px;
+    font-size: 1.4em;
     font-weight: 500;
-    line-height: 60px;
 }
 
 .description {
     color: rgb(91, 97, 122);
-    font-size: 20px;
+    font-size: 0.7em;
     font-weight: 300;
-    line-height: 25px;
     margin-top: 24px;
 }
 
@@ -99,9 +99,8 @@ html, body {
 
 .title {
     color: rgb(38, 46, 53);
-    font-size: 48px;
+    font-size: 1.4em;
     font-weight: 500;
-    line-height: 60px;
 }
 
 .buttons {
@@ -111,11 +110,10 @@ html, body {
     column-gap: 24px;
     display: flex;
     flex-wrap: wrap;
-    font-size: 16px;
+    font-size: 1.1em;
     font-style: normal;
     font-weight: 300;
     justify-content: center;
-    line-height: 20px;
     row-gap: 24px;
     text-align: center;
     visibility: visible;
@@ -136,7 +134,6 @@ html, body {
     margin-top: 48px;
     width: 100%;
     height: auto; /* Make it responsive */
-    flex-direction: row;
 }
 
 .about-card-wrapper {
@@ -144,44 +141,45 @@ html, body {
     align-items: stretch; /* Ensure all cards have the same height */
     justify-content: center;
     gap: 24px;
-    margin-top: 48px;
-    width: 100%;
-    height: auto; /* Make it responsive */
-    flex-direction: row;
+    width: fit-content;
+    flex-direction: column;
+    align-items: stretch;
+    /* height: auto; Make it responsive */
     padding: 24px;
+    box-sizing: border-box;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 
 .about-card{
-    min-height: 400px;
-    width: 400px;
-    height: auto; /* Make it responsive */
+    display: flex;
     flex-direction: column;
     border-radius: 16px;
     border-width: 1px;
     border-style: solid;
-    padding:24px;
-
+    padding: 24px;
     background-color: rgb(255, 255, 255);
     border-color: rgb(198, 204, 208);
-    transition: 0.2s, opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.05s;
+    overflow: hidden;
 }
-
 .card-title{
     color: rgb(38, 46, 53);
     font-size: 22px;
     font-weight: 600;
-    line-height: 40px;
 }
 
 .card-content{
     color: rgb(91, 97, 122);
-    font-size: 16px;
+    font-size: 0.85em;
     font-weight: 300;
-    line-height: 25px;
-    margin-top: 24px;
-    min-height:60px;
+    margin-top: 10px;
+    height: 0lh;
+    overflow: hidden;
+    transition: height 200ms ease-in-out;
 }
-
+.about-card:hover .card-content{
+    height: 8.2lh;
+}
 
 .about-card:hover{
     background-color: rgb(247, 247, 248);
@@ -195,7 +193,6 @@ html, body {
     align-items: center;
     justify-content: center;
     gap: 24px;
-    margin-top: 48px;
     height: auto; /* Make it responsive */
     flex-direction: column;
     overflow-y: auto;
@@ -205,15 +202,13 @@ html, body {
 .subtitle {
     color: rgb(38, 46, 53);
     font-size: 32px;
-    line-height: 40px;
     font-weight: 600;
 }
 
 .description li{
     color: rgb(91, 97, 122);
-    font-size: 20px;
+    font-size: 0.7em;
     font-weight: 300;
-    line-height: 25px;
     margin-top: 24px;
 }
 
@@ -231,20 +226,15 @@ html, body {
     justify-content: center;
     gap: 24px;
     transition: height 6s cubic-bezier(0.5, 0, 0, 1) 5s;
-    overflow: hidden;
 }
 
-.subpage {
-    height:0;
+.subpage:not(.active) {
+    display: none;
 }
-
-.subpage.active {
-    height: auto;
-}
-
 
 .info{
     display: flex;
+    flex-direction: column;
     width: 40%;
     height: 100%;
 }
@@ -255,101 +245,63 @@ html, body {
     height: 100%;
 }
 
+.page:has(.AI-description-page-wrapper){
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .AI-description-page-wrapper{
-    flex-direction: row !important;
+    display: flex;
     width: 100%;
     height: 100%;
-    display: flex;
 }
 
 /* Style for the similar works container */
 .similar-works {
-    border-radius: 16px;
-    border: solid rgb(198, 204, 208);
-    width:800px;
-    height: auto;
-}
-
-
-.setting-group-title {
-    display: flex;
-    gap: 8px;
-    border-radius: 8px;
-    align-items: center;
-    transition: transform 0.2s ease, padding 0.2s ease;
-    margin-right: 32px;
-    margin-bottom: 12px;
-    font-size: 18px !important;
-    font-style: normal !important;
-    font-weight: 500 !important;
-    padding-top: 24px;
-    padding-bottom: 24px;
-}
-
-.setting-group-title .icon-chevron-down {
-    padding-top: 2px;
-}
-
-.setting-info {
-    margin-right: auto;
-}
-
-.setting-wrapper {
-    display: none;
-    flex-direction: column;
-    gap: 8px;
-    padding: 12px;
-    border-radius: 8px;
-    transition: transform 0.2s ease, padding 0.2s ease;
-    width: auto !important;
-    flex-grow: 1;
-    overflow: hidden !important;
-    height: 0;
-}
-
-.setting-wrapper.expanded {
-    display: flex;
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: auto;
-    max-height: 600px;
-}
-
-.setting-group {
-    height: 45px;
-    max-height: 600px;
-    transition: max-height 0.3s ease;
-    margin-right: 24px;
-    border-radius: 12px;
-    overflow: visible;
-    border-bottom: rgb(91, 97, 122);
-    border-bottom: solid 1px;
-    box-sizing: border-box;
-}
-
-.setting-group.expanded {
-    height: auto;
-    max-height: 600px;
-}
-
-.setting-value {
-    margin-right: 12px;
-    height: 25px;
-    width: 25px;
-    background: rgba(66, 63, 63, 0.5);
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    font-weight: bold;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 24px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid rgba(19, 19, 19, 0.1);
     border-radius: 7px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    line-height: 30px;
+    
+    /* Make the details element look neat */
+    details {
+        cursor: pointer;
+        padding: 10px;
+    }
+    /* Summary styling */
+    summary {
+        font-size: 0.7em;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    /* Headings inside the details block */
+    h3 {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #262e35;
+    }
+
+    /* List styling */
+    ul {
+        list-style: disc;
+        padding-left: 20px;
+    }
+    ul li {
+        margin-bottom: 10px;
+    }
+    /* Link styling */
+    a {
+        color: #0066cc;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
 }
 
-.largeTitle{
-    font-size: 64px !important;
-}
 
 /*.subpage.active .title{*/
 /*    margin-top: 0;*/
