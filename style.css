@@ -1,0 +1,352 @@
+
+html, body {
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    zoom: 75%;
+    position: absolute; /* Added so all pages overlap */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1200px;
+    border: rgba(19, 19, 19, 0.10) 4px solid;
+    border-radius: 7px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack elements vertically */
+    padding: 42px;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Ensure smooth fading and sliding */
+}
+
+.page.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.text, .description, .buttons-wrapper, .primary-button, .secondary-button, .button, .container, .content-wrapper, .content, .title {
+    box-sizing: border-box;
+    color: rgb(91, 97, 122);
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: center;
+}
+
+.text {
+    color: rgb(38, 46, 53);
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 60px;
+}
+
+.description {
+    color: rgb(91, 97, 122);
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 25px;
+    margin-top: 24px;
+}
+
+.buttons-wrapper {
+    margin-top: 32px;
+    display: flex !important;
+    justify-content: center;
+    gap: 16px;
+}
+
+.primary-button, .secondary-button {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.primary-button {
+    display: flex !important;
+    background-color: rgb(24, 24, 24);
+    color: rgb(255, 255, 255);
+    border-radius: 11px;
+}
+
+.secondary-button {
+    display: flex !important;
+    background-color: rgb(243, 243, 243);
+    color: rgb(24, 24, 24);
+    border-radius: 11px;
+    box-shadow: rgba(33, 32, 52, 0) 0px 5px 10px 0px;
+}
+
+.container {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 1200px;
+    width: 780px;
+}
+
+.title {
+    color: rgb(38, 46, 53);
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 60px;
+}
+
+.buttons {
+    align-items: center;
+    box-sizing: border-box;
+    color: rgb(91, 97, 122);
+    column-gap: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    justify-content: center;
+    line-height: 20px;
+    row-gap: 24px;
+    text-align: center;
+    visibility: visible;
+}
+
+.about-title{
+    position: relative;
+    align-self: flex-start !important;
+/*    clip to the top of the page*/
+    justify-self: flex-start !important;
+}
+
+.about-me {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start; /* Align content to the left */
+    gap: 24px;
+    margin-top: 48px;
+    width: 100%;
+    height: auto; /* Make it responsive */
+    flex-direction: row;
+}
+
+.about-card-wrapper {
+    display: flex;
+    align-items: stretch; /* Ensure all cards have the same height */
+    justify-content: center;
+    gap: 24px;
+    margin-top: 48px;
+    width: 100%;
+    height: auto; /* Make it responsive */
+    flex-direction: row;
+    padding: 24px;
+}
+
+.about-card{
+    min-height: 400px;
+    width: 400px;
+    height: auto; /* Make it responsive */
+    flex-direction: column;
+    border-radius: 16px;
+    border-width: 1px;
+    border-style: solid;
+    padding:24px;
+
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(198, 204, 208);
+    transition: 0.2s, opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.05s;
+}
+
+.card-title{
+    font-family: "Inter", sans-serif;
+    color: rgb(38, 46, 53);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+.card-content{
+    color: rgb(91, 97, 122);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 25px;
+    margin-top: 24px;
+    font-family: "Inter", sans-serif;
+    min-height:60px;
+}
+
+
+.about-card:hover{
+    background-color: rgb(247, 247, 248);
+    border-color: rgb(198, 204, 208);
+    box-shadow: rgba(33, 32, 52, 0.8) 0px 10px 20px -10px;
+}
+
+.XGB-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 48px;
+    width: 100%;
+    height: auto; /* Make it responsive */
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+
+.subtitle {
+    font-family: "Inter", sans-serif;
+    color: rgb(38, 46, 53);
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 600;
+}
+
+.description li{
+    color: rgb(91, 97, 122);
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 25px;
+    margin-top: 24px;
+}
+
+.XGB-info {
+    display: block;
+    overflow: hidden;
+    width: 300px;
+    height: auto;
+}
+
+.subpage {
+    position: relative;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    transition: height 6s cubic-bezier(0.5, 0, 0, 1) 5s;
+    overflow: hidden;
+}
+
+.subpage {
+    height:0;
+}
+
+.subpage.active {
+    height: auto;
+}
+
+
+.info{
+    width: 40%;
+    height: 100%;
+}
+
+.displayed-cards{
+    width: 60%;
+    height: 100%;
+}
+
+/* Style for the similar works container */
+.similar-works {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 24px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid rgba(19, 19, 19, 0.1);
+    border-radius: 7px;
+}
+
+/* Make the details element look neat */
+.similar-works details {
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Summary styling */
+.similar-works summary {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Headings inside the details block */
+.similar-works h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #262e35;
+}
+
+/* List styling */
+.similar-works ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+.similar-works ul li {
+    margin-bottom: 10px;
+}
+
+/* Link styling */
+.similar-works a {
+    color: #0066cc;
+    text-decoration: none;
+}
+.similar-works a:hover {
+    text-decoration: underline;
+}
+
+
+/*.subpage.active .title{*/
+/*    margin-top: 0;*/
+/*}*/
+
+.bold-text{
+    font-weight: 800;
+}
+
+.slide-out-up {
+    animation: slideOutUp 0.8s forwards;
+}
+
+.slide-in-up {
+    animation: slideInUp 0.8s forwards;
+}
+
+.slide-out-down {
+    animation: slideOutDown 0.8s forwards;
+}
+
+.slide-in-down {
+    animation: slideInDown 0.8s forwards;
+}
+
+@keyframes slideOutUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes slideOutDown {
+    from { transform: translateY(0); }
+    to { transform: translateY(100%); }
+}
+
+@keyframes slideInDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
