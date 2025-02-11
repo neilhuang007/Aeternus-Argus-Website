@@ -4,6 +4,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: Inter, sans-serif;
 }
 
 .page {
@@ -34,7 +35,6 @@ html, body {
 .text, .description, .buttons-wrapper, .primary-button, .secondary-button, .button, .container, .content-wrapper, .content, .title {
     box-sizing: border-box;
     color: rgb(91, 97, 122);
-    font-family: Inter, sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 300;
@@ -111,7 +111,6 @@ html, body {
     column-gap: 24px;
     display: flex;
     flex-wrap: wrap;
-    font-family: Inter, sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 300;
@@ -168,7 +167,6 @@ html, body {
 }
 
 .card-title{
-    font-family: "Inter", sans-serif;
     color: rgb(38, 46, 53);
     font-size: 22px;
     font-weight: 600;
@@ -181,7 +179,6 @@ html, body {
     font-weight: 300;
     line-height: 25px;
     margin-top: 24px;
-    font-family: "Inter", sans-serif;
     min-height:60px;
 }
 
@@ -206,7 +203,6 @@ html, body {
 
 
 .subtitle {
-    font-family: "Inter", sans-serif;
     color: rgb(38, 46, 53);
     font-size: 32px;
     line-height: 40px;
@@ -266,44 +262,41 @@ html, body {
     background-color: #f9f9f9;
     border: 1px solid rgba(19, 19, 19, 0.1);
     border-radius: 7px;
-}
+    
+    /* Make the details element look neat */
+    details {
+        cursor: pointer;
+        padding: 10px;
+    }
+    /* Summary styling */
+    summary {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    /* Headings inside the details block */
+    h3 {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #262e35;
+    }
 
-/* Make the details element look neat */
-.similar-works details {
-    cursor: pointer;
-    padding: 10px;
-}
-
-/* Summary styling */
-.similar-works summary {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-/* Headings inside the details block */
-.similar-works h3 {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #262e35;
-}
-
-/* List styling */
-.similar-works ul {
-    list-style: disc;
-    padding-left: 20px;
-}
-.similar-works ul li {
-    margin-bottom: 10px;
-}
-
-/* Link styling */
-.similar-works a {
-    color: #0066cc;
-    text-decoration: none;
-}
-.similar-works a:hover {
-    text-decoration: underline;
+    /* List styling */
+    ul {
+        list-style: disc;
+        padding-left: 20px;
+    }
+    ul li {
+        margin-bottom: 10px;
+    }
+    /* Link styling */
+    a {
+        color: #0066cc;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
 }
 
 
