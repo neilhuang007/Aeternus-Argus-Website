@@ -141,4 +141,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    const similarWorkGroups = document.querySelectorAll('.similar-work-group');
+
+    similarWorkGroups.forEach(group => {
+        const toggleButton = group.querySelector('.icon-plus-square');
+        const info = group.querySelector('.similar-works-info');
+
+        toggleButton.addEventListener('click', function() {
+            if (getComputedStyle(info).height === "0px") {
+                info.style.height = info.scrollHeight + 'px';
+                toggleButton.classList.remove('icon-plus-square');
+                toggleButton.classList.add('icon-minus-square');
+            } else {
+                info.style.height = '0';
+                toggleButton.classList.remove('icon-minus-square');
+                toggleButton.classList.add('icon-plus-square');
+            }
+        });
+    });
 });
